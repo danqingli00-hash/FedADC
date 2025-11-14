@@ -1,0 +1,61 @@
+###################################################################################################################
+# Exp Setting
+
+MapDataName-{'M': 'mnist', 'C': 'cifar10', 'S': 'sate', 'L': 'lc', 'B': 'btumor', 'K': 'knee'}
+expName: B
+
+MapDataDis-{'N': 'Normalize', 'D': 'Dirichlet'}
+useNormalizeOrDirichlet: D
+
+#dataIDUseExpSaved: 20250427101436_0827
+#dataIDUseExpSaved: NO
+dataIDUseExpSaved: 20250712003058_080632
+###################################################################################################################
+# 1 means True, 0 means False
+doSoftmax: 0
+
+# 1 means NonIID, 0 means IID
+pubDataIsNonIID: 0
+
+# 1 means True, 0 means False
+usePubGen: 0
+###################################################################################################################
+# If this is 3, then each client owns each of the 3 model types.
+clientNum: 6
+
+dirichletAlpha: 0.9
+###################################################################################################################
+pubDataTakenRatio: 1.0
+trainDataTakenRatio: 1.0
+
+# if the pub data is Non-IID
+pubDataMean: 5
+pubDataVar: 3.5
+###################################################################################################################
+# Model Training
+
+centralModelIter: 20
+
+outIterNum: 16
+iterNEachOuterFirst: 80
+iterNEachOuterAfter: 80
+thisLr: 0.001
+thisBatch: 16
+
+accDisplayIterGap: 10
+###################################################################################################################
+TGPTrainServerIter: 10
+###################################################################################################################
+#trainFrameWorkIndex, PubDataDistillationTakenThreshold
+MapFramework-{0: 'Ours', 1: 'FedAPEN', 2: 'FedTGP', 3: 'FedDF', 4: 'Cronus', 5: 'FedGEMS', 6: 'FedProto', 7: 'FedMD', 8: 'FedProx', 9: 'FedAvg'}
+testExpSet-0: 0, 0.70
+testExpSet-1: 0, 0.65
+#testExpSet-0: 1, None
+#testExpSet-1: 2, None
+#testExpSet-2: 3, None
+#testExpSet-0: 4, None
+#testExpSet-1: 6, None
+#testExpSet-2: 7, None
+#testExpSet-3: 8, None
+#testExpSet-4: 9, None
+###################################################################################################################
